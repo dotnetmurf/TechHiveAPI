@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Exclude TechHiveAPI.Tests from being compiled as part of the main project -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);TechHiveAPI.Tests/**</DefaultItemExcludes>
+  </PropertyGroup>
+</Project>
