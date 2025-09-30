@@ -1,0 +1,97 @@
+### TechHive User Management API - Validation Tests
+### Base URL
+@baseUrl = https://localhost:7154
+@token = TechHive2024SecureToken
+
+### 1. Create User - Missing Required Fields
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "John"
+}
+
+### 2. Create User - Invalid Email Format
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "invalid-email",
+  "role": "Developer"
+}
+
+### 3. Create User - Invalid Role
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@techhive.com",
+  "role": "InvalidRole"
+}
+
+### 4. Create User - FirstName Too Long
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "ThisIsAVeryLongFirstNameThatExceedsTwentyFiveCharacters",
+  "lastName": "Doe",
+  "email": "john.doe@techhive.com",
+  "role": "Developer"
+}
+
+### 5. Create User - Email Too Long
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "this.is.a.very.long.email.address.that.exceeds.fifty.characters@techhive.com",
+  "role": "Developer"
+}
+
+### 6. Create User - Valid with All Roles (Developer)
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Developer",
+  "email": "test.developer@techhive.com",
+  "role": "Developer"
+}
+
+### 7. Create User - Valid with Manager Role
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Manager",
+  "email": "test.manager@techhive.com",
+  "role": "Manager"
+}
+
+### 8. Create User - Valid with QA Engineer Role
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "QA",
+  "email": "test.qa@techhive.com",
+  "role": "QA Engineer"
+}

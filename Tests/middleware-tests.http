@@ -1,0 +1,30 @@
+### TechHive User Management API - Middleware Tests
+### Base URL
+@baseUrl = https://localhost:7154
+@token = TechHive2024SecureToken
+
+### 1. Access API without Authentication Token (Should fail with 401)
+GET {{baseUrl}}/api/users
+
+### 2. Access API with Invalid Token (Should fail with 401)
+GET {{baseUrl}}/api/users
+Authorization: Bearer InvalidToken123
+
+### 3. Access API with Valid Token (Should succeed)
+GET {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+
+### 4. Access Swagger without Token (Should succeed - bypasses auth)
+GET {{baseUrl}}/swagger/v1/swagger.json
+
+### 5. Access Root without Token (Should succeed - redirects to Swagger)
+GET {{baseUrl}}/
+
+### 6. Test Error Handling - Trigger Internal Server Error
+# This tests the ErrorHandlingMiddleware by trying to access an invalid endpoint
+GET {{baseUrl}}/api/users/invalid
+Authorization: Bearer {{token}}
+
+### 7. Seed Database (Reset to 25 sample users)
+POST {{baseUrl}}/api/data/seed
+Authorization: Bearer {{token}}

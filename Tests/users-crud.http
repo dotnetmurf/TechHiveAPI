@@ -1,0 +1,72 @@
+### TechHive User Management API - CRUD Operations Tests
+### Base URL
+@baseUrl = https://localhost:7154
+@token = TechHive2024SecureToken
+
+### 1. Get All Users
+GET {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+
+### 2. Get User by ID (existing user)
+GET {{baseUrl}}/api/users/1
+Authorization: Bearer {{token}}
+
+### 3. Get User by ID (non-existing user)
+GET {{baseUrl}}/api/users/999
+Authorization: Bearer {{token}}
+
+### 4. Create New User
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice.johnson@techhive.com",
+  "role": "Developer"
+}
+
+### 5. Update Existing User
+PUT {{baseUrl}}/api/users/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe.updated@techhive.com",
+  "role": "Team Lead"
+}
+
+### 6. Update Non-Existing User
+PUT {{baseUrl}}/api/users/999
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "NonExistent",
+  "lastName": "User",
+  "email": "nonexistent@techhive.com",
+  "role": "Developer"
+}
+
+### 7. Delete User
+DELETE {{baseUrl}}/api/users/1
+Authorization: Bearer {{token}}
+
+### 8. Delete Non-Existing User
+DELETE {{baseUrl}}/api/users/999
+Authorization: Bearer {{token}}
+
+### 9. Create User with Duplicate Email
+POST {{baseUrl}}/api/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@techhive.com",
+  "role": "Developer"
+}
