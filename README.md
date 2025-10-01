@@ -11,6 +11,8 @@ This project is a modern, RESTful User Management API built with .NET 9.0 and AS
 
 This API was developed as an alternative version to a Mimimal API that was created as a three-part final project for the <a href="https://www.coursera.org/learn/back-end-development-with-dotnet?specialization=microsoft-full-stack-developer" target="_blank">"Back-End Development with .NET"</a>. The development process for this coursework has a focus on leveraging Microsoft Copilot for code generation, enhancement, and debugging. This course is one of twelve courses required for obtaining the <a href="https://www.coursera.org/professional-certificates/microsoft-full-stack-developer" target="_blank">"Microsoft Full-Stack Developer Professional Certificate"</a>.
 
+The Minimal API version of the TechHive User Management API can be viewed <a href="https://github.com/dotnetmurf/BackEndDevFinalProject/" target="_blank">here</a>.
+
 ## 🚀 Features
 
 - **Clean Architecture** - 3-layer separation (Controllers → Services → Repositories)
