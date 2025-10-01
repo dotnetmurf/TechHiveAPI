@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechHive Solutions LLC</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <img src="images/TechHive-logo.png" alt="TechHive Logo" class="logo" />
+            <h1 class="slogan">Where Innovation Swarms</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>TechHive Solutions User Management API</h1>
+            <p>
+                This project is a User Management API that uses an ASP.NET Core Controller API for TechHive Solutions.
+                It enables TechHive's HR and IT departments to create, update, retrieve, and delete user records
+                efficiently.
+            </p>
+            <p>
+                This API was built as an alternative implementation to the original TechHive Solutions User Management
+                API, which was developed using a Minimal API approach. The Minimal API version was developed as a
+                three-part final project for the <a
+                    href="https://www.coursera.org/learn/back-end-development-with-dotnet?specialization=microsoft-full-stack-developer"
+                    target="_blank">"Back-End Development with .NET"</a>
+                course with a focus on leveraging Microsoft Copilot for code generation, enhancement, and debugging. The
+                project requirements can be viewed <a href="docs/project-requirements.txt" target="_blank">here</a>.
+            </p>
+            <p>
+                The GitHub repository for this project can be found <a href="https://github.com/dotnetmurf/TechHiveAPI"
+                    target="_blank">here</a>.
+            </p>
+            <p>
+                The GitHub repository for the Minimal API project can be found <a
+                    href="https://github.com/dotnetmurf/BackEndDevFinalProject" target="_blank">here</a>.
+            </p>
+            <p>
+                Regarding how Copilot was used in this project's development process, transcriptions of the prompts
+                that were used and the conversations that occurred were captured and saved in text files. These files
+                can be found in the <a href="https://github.com/dotnetmurf/TechHiveAPI/tree/master/wwwroot/docs"
+                    target="_blank">/wwwroot/docs</a> folder in the project's Github repository.
+            </p>
+            <h2>Key Features</h2>
+            <ul>
+                <li>Clean Architecture - 3-layer separation (Controllers → Services → Repositories)</li>
+                <li>Token-Based Authentication - Custom middleware with Bearer token validation</li>
+                <li>In-Memory Database - EF Core InMemory provider for rapid development</li>
+                <li>Auto-Seeding - 25 sample users automatically created on startup</li>
+                <li>Comprehensive Validation - Custom validators with detailed error messages</li>
+                <li>Global Error Handling - Centralized exception handling middleware</li>
+                <li>Request/Response Logging - Detailed logging for debugging and monitoring</li>
+                <li>Swagger UI - Interactive API documentation at root path</li>
+                <li>Full Test Coverage - Unit tests with Moq and integration tests with WebApplicationFactory</li>
+                <li>HTTP Test Files - Ready-to-use .http files for VS Code REST Client</li>
+            </ul>
+            <h2>Testing with Swagger UI</h2>
+            <p>
+                To test the API endpoints, you can use the Swagger UI interface that is automatically generated for the
+                API. However, an authorization token will be required to access the endpoints. To send the authorization
+                token in Swagger UI, follow these steps:
+            <ol>
+                <li>Click <a href="swagger" target="_blank">here</a> to open Swagger UI in a new page (usually at
+                    /swagger or /swagger/index.html).</li>
+                <li>Click the "Authorize" button (often a lock icon at the top right).</li>
+                <li>In the value field, enter: <strong>TechHive2024SecureToken</strong></li>
+                <li>Click "Authorize" and then "Close".</li>
+            </ol>
+            Now, all your API requests from Swagger UI will include the authorization header with your token.
+            </p>
+            <p>
+                Other tools like Postman can also be used to test the API endpoints by including the authorization token
+                in the headers. Full Test Coverage is also available if using the application in an IDE. Please see the
+                <strong><em>Testing</em></strong> section in the README.md file for more
+                details.
+            </p>
+            <h2>Resetting the List of Users (user store)</h2>
+            <p>
+                The API exposes an POST endpoint (/users/reset) to reset the user store to its initial state. You can
+                use the Swagger UIinterface that is automatically generated for the API to call this endpoint if a reset
+                of the user store
+                is needed.
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2025 TechHive Solutions LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
