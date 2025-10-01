@@ -1,10 +1,15 @@
 # TechHive User Management API
 
+The deployed version of the TechHive API can be viewed <a href="https://dev.dotnetmurf.net/TechHiveAPI/" target="_blank">here</a>.
+
 [![.NET](https://img.shields.io/badge/.NET-9.0-512BD4)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 
-A modern, RESTful User Management API built with .NET 9.0 and ASP.NET Core, implementing clean architecture principles with comprehensive authentication, validation, and testing.
+## Project Overview
+This project is a modern, RESTful User Management API built with .NET 9.0 and ASP.NET Core for TechHive Solutions. It implements clean architecture principles with comprehensive authentication, validation, and testing. It allows HR and IT departments to efficiently create, update, retrieve, and delete user records.
+
+This API was developed as an alternative version to a Mimimal API that was created as a three-part final project for the <a href="https://www.coursera.org/learn/back-end-development-with-dotnet?specialization=microsoft-full-stack-developer" target="_blank">"Back-End Development with .NET"</a>. The development process for this coursework has a focus on leveraging Microsoft Copilot for code generation, enhancement, and debugging. This course is one of twelve courses required for obtaining the <a href="https://www.coursera.org/professional-certificates/microsoft-full-stack-developer" target="_blank">"Microsoft Full-Stack Developer Professional Certificate"</a>.
 
 ## 🚀 Features
 
