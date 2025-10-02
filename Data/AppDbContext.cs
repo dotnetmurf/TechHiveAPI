@@ -1,3 +1,8 @@
+/*
+    File: AppDbContext.cs
+    Summary: Entity Framework Core database context for the TechHive API. 
+    Manages the Users DbSet and configures model properties, including unique constraints for user emails.
+*/
 using Microsoft.EntityFrameworkCore;
 using TechHiveAPI.Models;
 

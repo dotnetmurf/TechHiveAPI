@@ -1,3 +1,7 @@
+/*
+    File: DataController.cs
+    Summary: Provides endpoints for managing and reseeding in-memory user data. Includes a reset endpoint to reseed the database with sample users for demonstration/testing.
+*/
 using Microsoft.AspNetCore.Mvc;
 using TechHiveAPI.Services;
 

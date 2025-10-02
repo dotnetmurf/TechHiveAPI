@@ -571,32 +571,12 @@ Follow the clean architecture pattern:
 - Write unit tests for business logic
 - Write integration tests for endpoints
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## Contact
 
-- **dotnetmurf** - *Initial work* - [GitHub](https://github.com/dotnetmurf)
-
-## 🙏 Acknowledgments
-
-- Built with [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/)
-- Testing with [xUnit](https://xunit.net/) and [Moq](https://github.com/moq/moq4)
-- Documentation with [Swagger/OpenAPI](https://swagger.io/)
-
-## 📞 Support
-
-For issues, questions, or contributions, please open an issue on the [GitHub repository](https://github.com/dotnetmurf/TechHiveAPI/issues).
+For questions about this educational project, please refer to the course materials or contact the instructor at <a href="https://www.coursera.org/learn/back-end-development-with-dotnet?specialization=microsoft-full-stack-developer" target="_blank">"Back-End Development with .NET"</a>
 
 ---
-
-**Built with ❤️ using .NET 9.0**
