@@ -1,0 +1,68 @@
+name: Build and deploy ASP.Net Core app to Azure Web App - techhiveapi
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
+
+      - name: Restore dependencies
+        run: dotnet restore TechHiveAPI.csproj
+
+      - name: Build with dotnet
+        run: dotnet build TechHiveAPI.csproj --configuration Release
+
+      - name: Publish with dotnet
+        run: dotnet publish TechHiveAPI.csproj --configuration Release --output ./publish
+
+      - name: Upload artifact for deployment
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-app
+          path: ./publish
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: dotnet-app
+          path: ./publish
+
+      - name: List files for debug
+        run: ls -alR ./publish
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CC25B5DF112B434DB76C8F7BD7A75214 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_68E8B2F9896C420D9F178A2C82E495AA }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_89096E4D7A0040B9873FAE58A52FF980 }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'techhiveapi'
+          slot-name: 'Production'
+          package: ./publish
+          startup-command: 'dotnet TechHiveAPI.dll'
