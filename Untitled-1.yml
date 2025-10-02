@@ -1,0 +1,47 @@
+name: Deploy ASP.NET Core to Azure Web App
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: <your-app-name>         # Replace with your Azure Web App name
+  DOTNET_VERSION: '9.0.x'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish
+      run: dotnet publish --configuration Release --output ./publish
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ./publish
+
+# Instructions:
+
+# Replace <your-app-name> with your Azure Web App name.
+# In Azure Portal, download your Web App’s publish profile and add it as a GitHub secret named AZURE_WEBAPP_PUBLISH_PROFILE.
+# Commit this file to .github/workflows/azure-webapp.yml.
+# This workflow will build and deploy your app on every push to master and on manual trigger.

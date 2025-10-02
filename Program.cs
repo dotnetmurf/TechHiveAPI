@@ -44,8 +44,8 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Enter 'TechHive2024SecureToken' in the text input below.\n\nExample: TechHive2024SecureToken",
         Name = "Authorization",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer"   // <-- Lowercase "bearer" for OpenAPI specification compliance
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -75,20 +75,14 @@ using (var scope = app.Services.CreateScope())
 
 // Configure the HTTP request pipeline - CRITICAL: Order matters!
 app.UseMiddleware<ErrorHandlingMiddleware>();      // 1. Catches all exceptions first
-
-app.UseDefaultFiles(); // Looks for index.html by default in wwwroot
-app.UseStaticFiles();  // Serves static files from wwwroot
-
-app.UseMiddleware<AuthenticationMiddleware>();     // 2. Validates token
-app.UseMiddleware<LoggingMiddleware>();            // 3. Logs request/response
+app.UseDefaultFiles(); // 2. Looks for index.html by default in wwwroot
+app.UseStaticFiles();  // 3. Serves static files from wwwroot
+app.UseMiddleware<AuthenticationMiddleware>();     // 4. Validates token
+app.UseMiddleware<LoggingMiddleware>();            // 5. Logs request/response
 
 // Configure Swagger
 app.UseSwagger();
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TechHive User Management API v1");
-    options.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
-});
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
