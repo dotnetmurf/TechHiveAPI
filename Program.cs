@@ -78,6 +78,9 @@ app.UseMiddleware<ErrorHandlingMiddleware>();      // 1. Catches all exceptions 
 app.UseMiddleware<AuthenticationMiddleware>();     // 2. Validates token
 app.UseMiddleware<LoggingMiddleware>();            // 3. Logs request/response
 
+// Enable static file serving from wwwroot
+app.UseStaticFiles();
+
 // Configure Swagger
 app.UseSwagger();
 app.UseSwaggerUI(options =>
