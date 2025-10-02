@@ -61,7 +61,8 @@ jobs:
         with:
           app-name: 'techhiveapi'
           slot-name: 'Production'
-          package: ./net-app
+          package: .net-app
 
           
+
 
