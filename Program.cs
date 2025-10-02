@@ -75,11 +75,12 @@ using (var scope = app.Services.CreateScope())
 
 // Configure the HTTP request pipeline - CRITICAL: Order matters!
 app.UseMiddleware<ErrorHandlingMiddleware>();      // 1. Catches all exceptions first
+
+app.UseDefaultFiles(); // Looks for index.html by default in wwwroot
+app.UseStaticFiles();  // Serves static files from wwwroot
+
 app.UseMiddleware<AuthenticationMiddleware>();     // 2. Validates token
 app.UseMiddleware<LoggingMiddleware>();            // 3. Logs request/response
-
-// Enable static file serving from wwwroot
-app.UseStaticFiles();
 
 // Configure Swagger
 app.UseSwagger();
