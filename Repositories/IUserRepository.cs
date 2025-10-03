@@ -1,3 +1,8 @@
+/*
+    File: IUserRepository.cs
+    Summary: Interface defining the contract for user repository operations, 
+    including CRUD methods and email validation.
+*/
 using TechHiveAPI.Models;
 
 namespace TechHiveAPI.Repositories;

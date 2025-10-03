@@ -1,3 +1,8 @@
+###    File: middleware-tests.http
+###    Summary: HTTP test file for validating middleware behavior, 
+###    including authentication token validation, invalid token handling, and auth bypasses for Swagger and root paths.
+
+
 ### TechHive User Management API - Middleware Tests
 ### Base URL
 @baseUrl = https://localhost:7154

@@ -1,3 +1,7 @@
+###    File: users-validation.http
+###    Summary: HTTP test file for validating user input constraints, 
+###    including required fields, email format, string lengths, and role validation rules.
+
 ### TechHive User Management API - Validation Tests
 ### Base URL
 @baseUrl = https://localhost:7154

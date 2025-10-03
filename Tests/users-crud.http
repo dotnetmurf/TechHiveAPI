@@ -1,3 +1,7 @@
+###    File: users-crud.http
+###    Summary: HTTP test file for testing CRUD operations on users, 
+###    including getting all users, retrieving by ID, creating, updating, and deleting users.
+
 ### TechHive User Management API - CRUD Operations Tests
 ### Base URL
 @baseUrl = https://localhost:7154

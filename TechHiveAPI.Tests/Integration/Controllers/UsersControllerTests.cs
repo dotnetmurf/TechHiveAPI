@@ -1,3 +1,8 @@
+/*
+    File: UsersControllerTests.cs
+    Summary: Integration test class for UsersController, testing full HTTP request/response cycles 
+    using WebApplicationFactory with in-memory database and real middleware pipeline.
+*/
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;

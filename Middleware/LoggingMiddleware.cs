@@ -1,4 +1,8 @@
-using System.Diagnostics;
+/*
+    File: LoggingMiddleware.cs
+    Summary: Middleware for logging HTTP requests and responses. 
+    Logs request details, response status, and processing duration for all API calls.
+*/using System.Diagnostics;
 
 namespace TechHiveAPI.Middleware;
 

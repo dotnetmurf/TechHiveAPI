@@ -1,3 +1,8 @@
+/*
+    File: ValidRoleAttribute.cs
+    Summary: Custom validation attribute that ensures user roles are one of 
+    the predefined valid roles for the TechHive API.
+*/
 using System.ComponentModel.DataAnnotations;
 
 namespace TechHiveAPI.Validation;

@@ -1,3 +1,8 @@
+/*
+    File: UserService.cs
+    Summary: Implementation of the user service interface, providing business logic for 
+    user management operations with validation, logging, and DTO mapping.
+*/
 using TechHiveAPI.DTOs;
 using TechHiveAPI.Models;
 using TechHiveAPI.Repositories;

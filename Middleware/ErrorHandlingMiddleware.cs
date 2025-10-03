@@ -1,4 +1,8 @@
-using System.Text.Json;
+/*
+    File: ErrorHandlingMiddleware.cs
+    Summary: Middleware for global error handling. 
+    Catches all unhandled exceptions, logs errors, and returns a standardized error response.
+*/using System.Text.Json;
 
 namespace TechHiveAPI.Middleware;
 

@@ -1,3 +1,8 @@
+/*
+    File: DataSeedService.cs
+    Summary: Service responsible for seeding the in-memory database with 
+    sample user data for demonstration and testing purposes.
+*/
 using TechHiveAPI.Data;
 using TechHiveAPI.Models;
 

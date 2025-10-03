@@ -1,3 +1,8 @@
+/*
+    File: UserRepository.cs
+    Summary: Entity Framework implementation of the user repository interface, 
+    providing data access operations for user entities.
+*/
 using Microsoft.EntityFrameworkCore;
 using TechHiveAPI.Data;
 using TechHiveAPI.Models;

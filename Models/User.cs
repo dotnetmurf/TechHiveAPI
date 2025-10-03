@@ -1,3 +1,7 @@
+/*
+    File: User.cs
+    Summary: Entity Framework model representing a user entity with properties for ID, name, email, and role.
+*/
 namespace TechHiveAPI.Models;
 
 /// <summary>

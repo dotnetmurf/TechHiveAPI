@@ -1,3 +1,8 @@
+/*
+    File: UserCreateDto.cs
+    Summary: DTO for creating a new user. 
+    Includes validation attributes for required fields, email format, and role constraints.
+*/
 using System.ComponentModel.DataAnnotations;
 using TechHiveAPI.Validation;
 

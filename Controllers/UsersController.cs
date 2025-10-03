@@ -1,6 +1,7 @@
 /*
     File: UsersController.cs
-    Summary: Handles CRUD operations for user management. Implements endpoints for creating, reading, updating, and deleting users with validation, error handling, and logging.
+    Summary: Handles CRUD operations for user management. 
+    Implements endpoints for creating, reading, updating, and deleting users with validation, error handling, and logging.
 */
 using Microsoft.AspNetCore.Mvc;
 using TechHiveAPI.DTOs;

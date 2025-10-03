@@ -1,4 +1,8 @@
-namespace TechHiveAPI.Middleware;
+/*
+    File: AuthenticationMiddleware.cs
+    Summary: Middleware for validating token-based authentication on all API endpoints except Swagger and root paths. 
+    Checks for a hardcoded bearer token and logs authentication events.
+*/namespace TechHiveAPI.Middleware;
 
 /// <summary>
 /// Middleware for token-based authentication.

@@ -1,3 +1,8 @@
+/*
+    File: UserRepositoryTests.cs
+    Summary: Unit test class for UserRepository, testing data access operations 
+    using Moq for logging and in-memory database for test isolation.
+*/
 using Microsoft.EntityFrameworkCore;
 using TechHiveAPI.Data;
 using TechHiveAPI.Models;

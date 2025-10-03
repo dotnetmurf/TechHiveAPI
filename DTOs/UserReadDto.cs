@@ -1,3 +1,8 @@
+/*
+    File: UserReadDto.cs
+    Summary: DTO for reading user information. 
+    Used for output responses, exposing non-sensitive user fields.
+*/
 namespace TechHiveAPI.DTOs;
 
 /// <summary>

@@ -1,3 +1,8 @@
+/*
+    File: UserUpdateDto.cs
+    Summary: DTO for updating an existing user. 
+    Includes validation for all fields and enforces required constraints and valid role.
+*/
 using System.ComponentModel.DataAnnotations;
 using TechHiveAPI.Validation;
 

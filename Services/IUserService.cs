@@ -1,3 +1,8 @@
+/*
+    File: IUserService.cs
+    Summary: Interface defining the contract for user service operations, 
+    including CRUD methods using DTOs for input/output.
+*/
 using TechHiveAPI.DTOs;
 
 namespace TechHiveAPI.Services;

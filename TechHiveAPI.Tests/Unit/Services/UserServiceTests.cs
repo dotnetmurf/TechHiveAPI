@@ -1,3 +1,7 @@
+/*
+    File: UserServiceTests.cs
+    Summary: Unit test class for UserService, testing business logic operations using Moq for dependency mocking.
+*/
 using Moq;
 using TechHiveAPI.DTOs;
 using TechHiveAPI.Models;
